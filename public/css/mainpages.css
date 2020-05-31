@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'dhivehi';
+  src: url('../fonts/needlework/DAM_Kalhi.otf');
+}
+
+ .thumb {
+    -ms-transform: skewY(-5deg);
+
+    transform: skewY(-5deg);
+    -webkit-box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.46);
+    box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.46);
+  }
+
+  .thumb:hover {
+    -ms-transform: skewY(0deg);
+    /* IE 9 */
+    transform: skewY(0deg);
+  }
+
+  /* body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1200px;
+        background: #ccc;
+    } */
+
+  .book {
+    transform-style: preserve-3d;
+    position: relative;
+    height: 200px;
+    cursor: pointer;
+    backface-visibility: visible;
+
+
+  }
+
+  .front,
+  .back,
+  .page1,
+  .page2,
+  .page3,
+  .page4,
+  .page5,
+  .page6 {
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left center;
+    transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
+  }
+
+  .front,
+  .back {
+    border: 4px white solid;
+    background: rgb(148, 148, 148);
+    padding: 10px;
+  }
+
+  .front,
+  .page1,
+  .page3,
+  .page5 {
+    border-bottom-right-radius: .5em;
+    border-top-right-radius: .5em;
+
+  }
+
+  .back,
+  .page2,
+  .page4,
+  .page6 {
+    border-bottom-right-radius: .5em;
+    border-top-right-radius: .5em;
+  }
+
+  .page1 {
+    background: #efefef;
+  }
+
+  .page2 {
+    background: #efefef;
+  }
+
+  .page3 {
+    background: #f5f5f5;
+  }
+
+  .page4 {
+    background: #f5f5f5;
+  }
+
+  .page5 {
+    background: #fafafa;
+  }
+
+  .page6 {
+    background: #fdfdfd;
+  }
+
+  .book:hover .front {
+    transform: rotateY(-160deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+
+  .book:hover .page1 {
+    transform: rotateY(-150deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+
+  .book:hover .page2 {
+    transform: rotateY(-30deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+
+  .book:hover .page3 {
+    transform: rotateY(-140deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+
+  .book:hover .page4 {
+    transform: rotateY(-40deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+
+  .book:hover .page5 {
+    transform: rotateY(-130deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+
+  .book:hover .page6 {
+    transform: rotateY(-50deg) scale(1.1);
+    box-shadow: 0 1em 3em 0 rgba(0, 0, 0, .2);
+  }
+
+  .book:hover .back {
+    transform: rotateY(-20deg) scale(1.1);
+  }
+
+  
+body {
+  background-image: url('../images/sys/sky.png');
+  background-repeat: repeat-x;
+  background-position: top;
+  height: 100%;
+  /* background-color: rgb(196, 243, 255);  */
+}
+
+.zoom {
+  padding: 5px;
+  margin: 50px;
+  transition: transform 0.2s;
+  /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.25);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.banner {
+  background-image: url('../images/sys/skytop.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+.bannerin {
+  margin-top: 10px;
+}
+
+.footer {
+  background-image: url('../images/sys/footerbg.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  z-index: -1;
+}
+
+.vertical-center {
+  min-height: 100%;
+  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh;
+  /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  background: white;
+  border-radius: 5%;
+}
+
+.img1 {
+  width: 80%;
+  float: right;
+}
+
+.img2 {
+  width: 20%;
+  float: left;
+}
+
+.sun {
+  animation-name: spin;
+  animation-duration: 30000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
